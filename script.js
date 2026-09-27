@@ -60,20 +60,6 @@ if (track && previousButton && nextButton && progress) {
   updateGallery();
 }
 
-const contactContext = document.querySelector('[data-contact-context]');
-document.querySelectorAll('a[href="#contact"]').forEach((link) => {
-  link.addEventListener('click', () => {
-    if (!contactContext) return;
-    if (link.dataset.contactNote) {
-      contactContext.textContent = link.dataset.contactNote;
-    } else if (link.dataset.subject) {
-      contactContext.textContent = `${link.dataset.subject}: напишите класс ученика и цель занятий.`;
-    } else {
-      contactContext.textContent = 'Для начала хватит короткого сообщения.';
-    }
-  });
-});
-
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
